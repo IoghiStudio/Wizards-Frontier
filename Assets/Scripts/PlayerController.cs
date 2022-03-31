@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    //test script
     [SerializeField] Transform playerCamera = null;
     [SerializeField] float mouseSensitivity = 4.2f;
     [SerializeField] bool lockCamera = true;
@@ -16,7 +17,7 @@ public class PlayerController : MonoBehaviour
     public ParticleSystem exitBroomEffect;
     public GameObject chestOpen;
     public GameObject chestClose;
-    
+    public float testScript;
 
     public float maxHealth = 100;
     public float maxMana = 100;
