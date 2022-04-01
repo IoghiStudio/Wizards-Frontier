@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 6eecb3bb77b3f7a43a504fceda3b0b5f, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 2e56da8dc2ed8fa499908fb12f386430, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.15999848, g: 0.10938119, b: 0.15005553, a: 1}
+  m_IndirectSpecularColor: {r: 0.37073156, g: 0.64147526, b: 0.87595236, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7214,8 +7214,9 @@ MonoBehaviour:
   mouseSensitivity: 4.2
   lockCamera: 1
   walkSpeed: 2
-  runningSpeed: 5
-  crouchSpeed: 0.8
+  runningSpeed: 6
+  crouchSpeed: 1
+  broomSpeed: 12.5
   broomContainer: {fileID: 2137891975}
   exitBroomEffect: {fileID: 486604543}
   chestOpen: {fileID: 7807594834367722947}
@@ -7227,6 +7228,7 @@ MonoBehaviour:
   mana: 75
   isRunning: 0
   isDead: 0
+  useBroom: 0
   controller: {fileID: 1001754895}
 --- !u!136 &1001754898
 CapsuleCollider:
@@ -11087,7 +11089,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 224de5a1c3ba5f948af30bd7826e4666, type: 2}
+  - {fileID: 2100000, guid: 020b997e4fa23c74297e208cd649319c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13189,7 +13191,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3905063037823701902, guid: 8dadc438252539b43a56494d248790e4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3905063037823701902, guid: 8dadc438252539b43a56494d248790e4, type: 3}
       propertyPath: m_LocalPosition.z

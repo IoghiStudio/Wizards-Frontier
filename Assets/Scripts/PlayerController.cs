@@ -11,7 +11,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] bool lockCamera = true;
     public float walkSpeed = 2;
     public float runningSpeed = 5;
-    public float crouchSpeed = 0.8f;
+    public float crouchSpeed = 1;
+    public float broomSpeed = 12.5f;
     public Transform broomContainer;
     Rigidbody playerRb;
     public ParticleSystem exitBroomEffect;
@@ -26,6 +27,7 @@ public class PlayerController : MonoBehaviour
 
     public bool isRunning;
     public bool isDead;
+    public bool useBroom;
     
     float cameraPitch = 0.0f;
     public CharacterController controller = null;
@@ -78,8 +80,9 @@ public class PlayerController : MonoBehaviour
         Vector3 velocity1 = (transform.forward * moveDir.y + transform.right * moveDir.x) * walkSpeed;
         Vector3 velocity2 = (transform.forward * moveDir.y + transform.right * moveDir.x) * runningSpeed;
         Vector3 velocity3 = (transform.forward * moveDir.y + transform.right * moveDir.x) * crouchSpeed;
+        Vector3 broomVelocity = (transform.forward * moveDir.y + transform.right * moveDir.x) * broomSpeed;
         //sprint
-        if (!isDead)
+        if (!isDead && !useBroom)
         {
             if (Input.GetKey(KeyCode.LeftShift))
             {
@@ -90,7 +93,7 @@ public class PlayerController : MonoBehaviour
             {
                 //crouch
                 controller.Move(velocity3 * Time.deltaTime);
-                Debug.Log("hahaha");
+                Debug.Log("crouch");
                 isRunning = false;
             }
             else
@@ -99,8 +102,11 @@ public class PlayerController : MonoBehaviour
                 controller.Move(velocity1 * Time.deltaTime);
                 isRunning = false;
             }
+        } 
+        if(!isDead && useBroom)
+        {
+            controller.Move(broomVelocity * Time.deltaTime);
         }
-
     }
     private void OnTriggerEnter(Collider other)
     {
